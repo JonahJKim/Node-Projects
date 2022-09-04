@@ -2,3 +2,4 @@ playground
 node_modules
 config
 dev.env
+test.env
