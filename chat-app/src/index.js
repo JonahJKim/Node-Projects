@@ -34,7 +34,15 @@ io.on('connection', (socket) => {
         socket.join(user.room)
 
         // send socket a welcome message
-        socket.emit('message', generateMessage('Admin', 'Welcome!'))
+        if (user.room === 'ilovekowoon') {
+            socket.emit('message', generateMessage('Jonah', 'Dear Kowoon - the love of my life. I made this room specifically for you.'))
+            socket.emit('message', generateMessage('Jonah', 'I love you so much and can\'t wait to be with you forever \u2665'))
+
+        } else {
+            socket.emit('message', generateMessage('Admin', 'Welcome!'))
+        }
+        
+
         socket.broadcast.to(user.room).emit('message', generateMessage(`${user.username} has joined!`))
         io.to(user.room).emit('roomData', {
             room: user.room,

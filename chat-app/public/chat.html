@@ -57,6 +57,16 @@
             </ul>
         </script>
 
+        <script id="sidebar2-template" type="text/html">
+            <h2 class="room-title">{{room}}</h2>
+            <h3 class="list-title">Users</h3>
+            <ul class="users">
+                {{#users}}
+                    <li>{{username}}</li>
+                {{/users}}
+            </ul>
+        </script>
+
         
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/3.0.1/mustache.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
